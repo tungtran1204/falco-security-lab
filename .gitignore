@@ -1,0 +1,8 @@
+*.tar
+*.key
+*.pem
+*.crt
+.env
+*secret*
+*credential*
+evidence/private/

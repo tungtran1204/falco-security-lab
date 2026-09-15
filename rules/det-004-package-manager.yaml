@@ -1,0 +1,14 @@
+- rule: Package Manager Executed in Container
+  desc: Detect package manager execution inside a running container
+  condition: >
+    spawned_process and
+    container and
+    proc.name in (apt, apt-get, dpkg, yum, dnf, rpm, apk)
+  output: >
+    Package manager executed in container
+    (user=%user.name command=%proc.cmdline
+    container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, package_management, det-004]
