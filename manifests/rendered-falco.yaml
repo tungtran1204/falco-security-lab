@@ -834,6 +834,13 @@ data:
       output: "Package manager executed in container (user=%user.name command=%proc.cmdline container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
       priority: WARNING
       tags: [container, package_management, det-004]
+  det-005-script-interpreter.yaml: |-
+    - rule: Script Interpreter Executed in Container
+      desc: Detect script interpreter execution inside a running container
+      condition: "evt.type = execve and container and proc.name in (python, python3, perl, ruby, node, php)"
+      output: "Script interpreter executed in container (user=%user.name command=%proc.cmdline parent=%proc.pname container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
+      priority: WARNING
+      tags: [container, execution, script_interpreter, det-005]
 ---
 # Source: falco/charts/falcosidekick/templates/rbac-ui.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1078,7 +1085,7 @@ spec:
         app.kubernetes.io/instance: falco
       annotations:
         checksum/config: a350493580286d51ab31091d1f109505f6b24a1910b4e1b75726e64cfb5ad5a8
-        checksum/rules: 512344effced034db44b503dbdfde671f82ec577189a88394f918a70f285169b
+        checksum/rules: 2489fcbbff73a4aadeeccd74d3de0c6e4133cdd5bbd4b882a275da39dd51edc7
         checksum/certs: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
     spec:
       serviceAccountName: falco

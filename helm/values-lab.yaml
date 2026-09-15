@@ -515,6 +515,13 @@ customRules:
       output: "Package manager executed in container (user=%user.name command=%proc.cmdline container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
       priority: WARNING
       tags: [container, package_management, det-004]
+  det-005-script-interpreter.yaml: |-
+    - rule: Script Interpreter Executed in Container
+      desc: Detect script interpreter execution inside a running container
+      condition: "evt.type = execve and container and proc.name in (python, python3, perl, ruby, node, php)"
+      output: "Script interpreter executed in container (user=%user.name command=%proc.cmdline parent=%proc.pname container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
+      priority: WARNING
+      tags: [container, execution, script_interpreter, det-005]
 ########################
 # Falco integrations   #
 ########################
