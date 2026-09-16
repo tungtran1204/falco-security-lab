@@ -1,0 +1,9 @@
+POD                                            CPU_MIN  CPU_AVG  CPU_MAX  MEM_MIN  MEM_AVG  MEM_MAX
+falco-falcosidekick-55cc7c5997-4lbnf              5.0m     8.1m    17.0m    41.0Mi    42.4Mi    43.0Mi
+falco-falcosidekick-55cc7c5997-qztfq              7.0m    25.1m    36.0m   212.0Mi   212.0Mi   212.0Mi
+falco-falcosidekick-ui-848fb7b9-mz6n4             6.0m     8.2m    12.0m    10.0Mi    10.1Mi    11.0Mi
+falco-falcosidekick-ui-848fb7b9-pvhzx             5.0m     9.2m    13.0m    12.0Mi    12.0Mi    12.0Mi
+falco-falcosidekick-ui-redis-0                  420.0m   448.9m   463.0m  2613.0Mi  2613.0Mi  2613.0Mi
+falco-ft7dh                                      38.0m    41.7m    47.0m    87.0Mi    87.0Mi    87.0Mi
+falco-k8saudit-5547bb4579-g4w8h                  65.0m    71.8m    77.0m    21.0Mi    21.0Mi    21.0Mi
+falco-vchmv                                      56.0m    59.8m    66.0m    80.0Mi    80.0Mi    80.0Mi

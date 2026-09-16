@@ -1,0 +1,162 @@
+P4-01 Falco resource baseline
+START=2026-09-16T15:40:58+07:00
+
+===== SAMPLE 1 2026-09-16T15:40:58+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1340m        33%      4960Mi          63%         
+node02   1224m        15%      5728Mi          36%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    6m           41Mi            
+falco-falcosidekick-55cc7c5997-qztfq    23m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   6m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   13m          12Mi            
+falco-falcosidekick-ui-redis-0          458m         2613Mi          
+falco-ft7dh                             46m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         73m          21Mi            
+falco-vchmv                             57m          80Mi            
+
+===== SAMPLE 2 2026-09-16T15:41:28+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1456m        36%      4990Mi          63%         
+node02   1284m        16%      5722Mi          36%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    17m          41Mi            
+falco-falcosidekick-55cc7c5997-qztfq    30m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   9m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   9m           12Mi            
+falco-falcosidekick-ui-redis-0          463m         2613Mi          
+falco-ft7dh                             43m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         65m          21Mi            
+falco-vchmv                             64m          80Mi            
+
+===== SAMPLE 3 2026-09-16T15:41:59+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1432m        35%      5001Mi          63%         
+node02   1227m        15%      5718Mi          35%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    7m           41Mi            
+falco-falcosidekick-55cc7c5997-qztfq    17m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   8m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   11m          12Mi            
+falco-falcosidekick-ui-redis-0          449m         2613Mi          
+falco-ft7dh                             38m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         74m          21Mi            
+falco-vchmv                             56m          80Mi            
+
+===== SAMPLE 4 2026-09-16T15:42:29+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1418m        35%      4987Mi          63%         
+node02   1230m        15%      5719Mi          35%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    6m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    30m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   6m           11Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   5m           12Mi            
+falco-falcosidekick-ui-redis-0          456m         2613Mi          
+falco-ft7dh                             39m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         71m          21Mi            
+falco-vchmv                             58m          80Mi            
+
+===== SAMPLE 5 2026-09-16T15:43:00+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1385m        34%      4946Mi          63%         
+node02   1132m        14%      5715Mi          35%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    6m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    7m           212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   6m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   6m           12Mi            
+falco-falcosidekick-ui-redis-0          435m         2613Mi          
+falco-ft7dh                             40m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         70m          21Mi            
+falco-vchmv                             60m          80Mi            
+
+===== SAMPLE 6 2026-09-16T15:43:30+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1331m        33%      4946Mi          63%         
+node02   1226m        15%      5716Mi          35%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    8m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    36m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   12m          10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   10m          12Mi            
+falco-falcosidekick-ui-redis-0          459m         2613Mi          
+falco-ft7dh                             45m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         67m          21Mi            
+falco-vchmv                             57m          80Mi            
+
+===== SAMPLE 7 2026-09-16T15:44:01+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1386m        34%      4945Mi          63%         
+node02   1235m        15%      5727Mi          36%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    5m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    30m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   8m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   12m          12Mi            
+falco-falcosidekick-ui-redis-0          448m         2613Mi          
+falco-ft7dh                             39m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         76m          21Mi            
+falco-vchmv                             61m          80Mi            
+
+===== SAMPLE 8 2026-09-16T15:44:31+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1334m        33%      4941Mi          63%         
+node02   1280m        16%      5727Mi          36%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    6m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    25m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   9m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   8m           12Mi            
+falco-falcosidekick-ui-redis-0          463m         2613Mi          
+falco-ft7dh                             47m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         72m          21Mi            
+falco-vchmv                             66m          80Mi            
+
+===== SAMPLE 9 2026-09-16T15:45:02+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1231m        30%      4951Mi          63%         
+node02   1160m        14%      5720Mi          35%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    12m          43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    24m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   10m          10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   7m           12Mi            
+falco-falcosidekick-ui-redis-0          420m         2613Mi          
+falco-ft7dh                             38m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         77m          21Mi            
+falco-vchmv                             56m          80Mi            
+
+===== SAMPLE 10 2026-09-16T15:45:32+07:00 =====
+--- NODE ---
+NAME     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+node01   1376m        34%      4949Mi          63%         
+node02   1254m        15%      5726Mi          36%         
+--- FALCO NAMESPACE ---
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    8m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    29m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   8m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   11m          12Mi            
+falco-falcosidekick-ui-redis-0          438m         2613Mi          
+falco-ft7dh                             42m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         73m          21Mi            
+falco-vchmv                             63m          80Mi            
