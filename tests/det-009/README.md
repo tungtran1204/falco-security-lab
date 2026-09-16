@@ -1,5 +1,9 @@
 # DET-009 - Suspicious Namespace Operation
 
+## Giải thích
+Phát hiện các syscall namespace đáng ngờ như setns hoặc unshare; test bằng container có SYS_ADMIN và chạy unshare --user để tạo tín hiệu cho Falco.
+
+
 ## Objective
 Detect suspicious Linux namespace manipulation inside a container.
 

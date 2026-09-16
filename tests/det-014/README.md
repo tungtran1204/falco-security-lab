@@ -1,5 +1,9 @@
 # DET-014 - Cron Persistence
 
+## Giải thích
+Phát hiện hành vi persistence thông qua việc tạo hoặc sửa cron file trong container; test bằng cách ghi file /etc/cron.d/det-014 và kiểm tra Falco sinh alert.
+
+
 ## Scenario
 Detect creation or modification of cron persistence files inside a container.
 

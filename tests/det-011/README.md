@@ -1,5 +1,9 @@
 # DET-011 - Host Proc or Sys Access
 
+## Giải thích
+Phát hiện container truy cập vùng filesystem nhạy cảm của host như /proc hoặc /sys; test bằng cách mount host /proc vào pod và đọc /host/proc/1/status.
+
+
 ## Objective
 Detect unusual access to host /proc or /sys from inside a container.
 

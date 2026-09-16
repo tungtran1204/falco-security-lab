@@ -1,5 +1,9 @@
 # DET-008 - Setuid / Privilege Change
 
+## Giải thích
+Phát hiện hành vi thay đổi UID/GID hoặc privilege trong container; test bằng setpriv để thay đổi UID/GID và kiểm tra Falco phát hiện syscall tương ứng.
+
+
 ## Objective
 Detect UID/GID identity changes inside a running container.
 

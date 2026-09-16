@@ -1,5 +1,9 @@
 # DET-012 - Kubectl Executed in Container
 
+## Giải thích
+Phát hiện việc chạy kubectl bên trong workload/container; test bằng cách chạy kubectl version --client trong pod test và kiểm tra Falco sinh alert.
+
+
 ## Scenario
 Detect execution of kubectl from inside a Kubernetes workload.
 

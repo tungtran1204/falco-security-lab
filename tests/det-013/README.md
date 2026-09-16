@@ -1,5 +1,9 @@
 # DET-013 - Kubernetes Secret API Access
 
+## Giải thích
+Phát hiện truy cập Kubernetes Secrets API thông qua Kubernetes Audit; test bằng cách tạo và đọc một Secret rồi kiểm tra Falco nhận event từ nguồn k8s_audit.
+
+
 ## Scenario
 Detect successful access to Kubernetes Secrets through the Kubernetes API.
 

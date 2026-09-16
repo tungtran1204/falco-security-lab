@@ -1,5 +1,9 @@
 # DET-010 - Container Runtime Socket Access
 
+## Giải thích
+Phát hiện container truy cập container runtime socket; test bằng cách mount containerd.sock vào pod, thực hiện truy cập socket và kiểm tra Falco sinh alert.
+
+
 ## Objective
 Detect access to the host container runtime socket from inside a container.
 

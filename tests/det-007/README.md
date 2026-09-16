@@ -1,5 +1,9 @@
 # DET-007 - Mounted Application Secret Read
 
+## Giải thích
+Phát hiện việc đọc secret hoặc credential được mount vào container; test bằng cách mount secret vào /etc/app-secrets/ rồi đọc file secret và kiểm tra Falco sinh alert.
+
+
 ## Objective
 Detect a container reading an application secret mounted as a Kubernetes Secret volume.
 

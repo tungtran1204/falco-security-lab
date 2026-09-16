@@ -1,5 +1,9 @@
 # DET-016 - Process and Network Discovery
 
+## Giải thích
+Phát hiện các công cụ discovery được chạy trong container; test bằng cách chạy ps aux trong pod test và kiểm tra Falco nhận diện tiến trình discovery.
+
+
 ## Scenario
 Detect execution of process or network discovery tools inside a container.
 

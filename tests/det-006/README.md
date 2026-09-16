@@ -1,5 +1,9 @@
 # DET-006 - Kubernetes Service Account Token Read
 
+## Giải thích
+Phát hiện tiến trình đọc Kubernetes ServiceAccount token được mount vào container; test bằng cách đọc file serviceaccount token và kiểm tra Falco ghi nhận hành vi truy cập.
+
+
 ## Objective
 Detect a container reading its Kubernetes service-account token.
 

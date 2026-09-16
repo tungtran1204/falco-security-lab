@@ -1,5 +1,9 @@
 # DET-004 - Package Manager Execution in Container
 
+## Giải thích
+Phát hiện việc chạy trình quản lý package trong container; test bằng cách chạy apt/apt-get trong pod test và kiểm tra Falco sinh alert.
+
+
 ## Objective
 
 Validate that Falco detects execution of package management tools inside a running container.

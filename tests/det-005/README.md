@@ -1,5 +1,9 @@
 # DET-005 - Script Interpreter Execution in Container
 
+## Giải thích
+Phát hiện việc chạy các script interpreter như Python, Perl, Ruby, Node hoặc PHP trong container; test bằng cách chạy python3 trong pod test và kiểm tra Falco sinh alert.
+
+
 ## Objective
 
 Validate that Falco detects script interpreter execution inside a running container.
