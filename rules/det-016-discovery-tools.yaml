@@ -1,0 +1,14 @@
+- rule: Discovery Tool Executed in Container
+  desc: Detect process or network discovery tools executed inside a container
+  condition: >
+    evt.type = execve and
+    container and
+    proc.name in (ps, ss, netstat, ifconfig, ip)
+  output: >
+    Discovery tool executed in container
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: NOTICE
+  tags: [container, discovery, det-016]

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: det-015-test
+  namespace: default
+spec:
+  restartPolicy: Never
+  containers:
+    - name: det-015
+      image: ubuntu:24.04
+      command: ["sleep", "3600"]

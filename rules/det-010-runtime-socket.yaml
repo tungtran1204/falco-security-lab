@@ -1,0 +1,20 @@
+- rule: Container Runtime Socket Access
+  desc: Detect access to container runtime sockets from inside a container
+  condition: >
+    evt.type in (open, openat, openat2, connect) and
+    container and
+    fd.name in (
+      /run/containerd/containerd.sock,
+      /var/run/containerd/containerd.sock,
+      /var/run/docker.sock,
+      /run/crio/crio.sock,
+      /var/run/crio/crio.sock
+    )
+  output: >
+    Container runtime socket accessed
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    file=%fd.name container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, container_runtime, privilege_escalation, det-010]

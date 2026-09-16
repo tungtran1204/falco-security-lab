@@ -1,0 +1,17 @@
+- rule: Executable File Created or Modified in Container
+  desc: Detect creation or modification of executable files in system binary directories inside a container
+  condition: >
+    evt.type in (open, openat, openat2) and
+    evt.is_open_write = true and
+    container and
+    (fd.name startswith /usr/bin/ or
+     fd.name startswith /usr/local/bin/ or
+     fd.name startswith /bin/)
+  output: >
+    Executable file created or modified in container
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    file=%fd.name container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, persistence, executable, det-015]

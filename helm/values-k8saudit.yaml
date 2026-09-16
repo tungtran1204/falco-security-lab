@@ -1,0 +1,64 @@
+controller:
+  kind: deployment
+  deployment:
+    replicas: 1
+
+driver:
+  enabled: false
+
+collectors:
+  enabled: false
+
+services:
+  - name: k8saudit-webhook
+    type: ClusterIP
+    ports:
+      - port: 9765
+        targetPort: 9765
+        protocol: TCP
+        name: http
+
+falcoctl:
+  artifact:
+    install:
+      enabled: true
+    follow:
+      enabled: false
+
+  config:
+    artifact:
+      allowedTypes:
+        - rulesfile
+        - plugin
+      install:
+        resolveDeps: true
+        refs:
+          - k8saudit-rules:0.18.0
+
+falco:
+  rules_files:
+    - /etc/falco/k8s_audit_rules.yaml
+    - /etc/falco/rules.d
+
+  plugins:
+    - name: k8saudit
+      library_path: libk8saudit.so
+      init_config: ""
+      open_params: "http://:9765/k8s-audit"
+
+    - name: json
+      library_path: libjson.so
+      init_config: ""
+
+  load_plugins:
+    - k8saudit
+    - json
+
+tty: true
+
+dnsConfig:
+  options:
+    - name: ndots
+      value: "1"
+
+

@@ -1,0 +1,13 @@
+- rule: Suspicious Namespace Operation in Container
+  desc: Detect namespace manipulation using setns or unshare inside a container
+  condition: >
+    evt.type in (setns, unshare) and
+    container
+  output: >
+    Suspicious namespace operation in container
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, privilege_escalation, namespace, det-009]

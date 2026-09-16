@@ -1,0 +1,16 @@
+- rule: Reverse Shell Network Connection
+  desc: Detect bash TCP socket usage that can indicate a reverse shell
+  condition: >
+    evt.type = connect and
+    container and
+    proc.name = bash and
+    proc.cmdline contains "/dev/tcp/"
+  output: >
+    Reverse shell network connection detected
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    connection=%fd.name remote_port=%fd.rport
+    container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: ERROR
+  tags: [container, network, reverse_shell, det-018]

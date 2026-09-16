@@ -1,0 +1,17 @@
+- rule: Outbound Connection from Container
+  desc: Detect outbound IPv4 TCP connections initiated from a container
+  condition: >
+    evt.type = connect and
+    container and
+    fd.type = ipv4 and
+    fd.l4proto = tcp and
+    not (k8s.ns.name in (falco, kube-system, longhorn-system))
+  output: >
+    Outbound connection from container
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    connection=%fd.name remote_port=%fd.rport
+    container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: NOTICE
+  tags: [container, network, outbound, det-017]

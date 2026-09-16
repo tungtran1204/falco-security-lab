@@ -841,6 +841,48 @@ data:
       output: "Script interpreter executed in container (user=%user.name command=%proc.cmdline parent=%proc.pname container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
       priority: WARNING
       tags: [container, execution, script_interpreter, det-005]
+  det-006-service-account-token.yaml: |-
+    - rule: Kubernetes Service Account Token Read
+      desc: Detect reads of Kubernetes service account token files from a container
+      condition: "evt.type in (open, openat, openat2) and evt.is_open_read = true and container and fd.name startswith /var/run/secrets/kubernetes.io/serviceaccount/ and fd.name endswith /token"
+      output: "Kubernetes service account token read (user=%user.name process=%proc.name command=%proc.cmdline file=%fd.name container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
+      priority: WARNING
+      tags: [container, credential_access, kubernetes, det-006]
+  det-007-mounted-secret.yaml: |-
+    - rule: Mounted Application Secret Read
+      desc: Detect reads of application secrets mounted inside a container
+      condition: "evt.type in (open, openat, openat2) and evt.is_open_read = true and container and fd.name startswith /etc/app-secrets/"
+      output: "Mounted application secret read (user=%user.name process=%proc.name command=%proc.cmdline file=%fd.name container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)"
+      priority: WARNING
+      tags: [container, credential_access, secret, det-007]
+  det-008-privilege-change.yaml: |-
+    - rule: Setuid or Setgid Executed in Container
+      desc: Detect setuid or setgid system calls used to change identity inside a container
+      condition: >
+        evt.type in (setuid, setgid, setreuid, setregid, setresuid, setresgid) and
+        container
+      output: >
+        Privilege identity change in container
+        (user=%user.name process=%proc.name command=%proc.cmdline
+        container_id=%container.id container_name=%container.name
+        image=%container.image.repository:%container.image.tag
+        k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+      priority: WARNING
+      tags: [container, privilege_escalation, det-008]
+  det-009-suspicious-namespace.yaml: |-
+    - rule: Suspicious Namespace Operation in Container
+      desc: Detect namespace manipulation using setns or unshare inside a container
+      condition: >
+        evt.type in (setns, unshare) and
+        container
+      output: >
+        Suspicious namespace operation in container
+        (user=%user.name process=%proc.name command=%proc.cmdline
+        container_id=%container.id container_name=%container.name
+        image=%container.image.repository:%container.image.tag
+        k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+      priority: WARNING
+      tags: [container, privilege_escalation, namespace, det-009]
 ---
 # Source: falco/charts/falcosidekick/templates/rbac-ui.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1085,7 +1127,7 @@ spec:
         app.kubernetes.io/instance: falco
       annotations:
         checksum/config: a350493580286d51ab31091d1f109505f6b24a1910b4e1b75726e64cfb5ad5a8
-        checksum/rules: 2489fcbbff73a4aadeeccd74d3de0c6e4133cdd5bbd4b882a275da39dd51edc7
+        checksum/rules: 1de53a3b5771be71af53d66a53fed13b873f0aedee70a8d696c2dba6087eee9d
         checksum/certs: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
     spec:
       serviceAccountName: falco

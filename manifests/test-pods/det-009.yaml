@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: det-009-test
+spec:
+  restartPolicy: Never
+  containers:
+    - name: det-009-test
+      image: ubuntu:22.04
+      command: ["sleep", "3600"]
+      securityContext:
+        capabilities:
+          add:
+            - SYS_ADMIN

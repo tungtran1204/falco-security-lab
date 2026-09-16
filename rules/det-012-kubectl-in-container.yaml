@@ -1,0 +1,14 @@
+- rule: Kubectl Executed in Container
+  desc: Detect kubectl execution inside a running container
+  condition: >
+    evt.type = execve and
+    container and
+    proc.name = kubectl
+  output: >
+    Kubectl executed in container
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, kubernetes, discovery, det-012]

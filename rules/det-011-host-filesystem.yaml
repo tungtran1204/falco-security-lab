@@ -1,0 +1,17 @@
+- rule: Host Proc or Sys Access from Container
+  desc: Detect access to host proc or sys filesystem mounted inside a container
+  condition: >
+    evt.type in (open, openat, openat2) and
+    evt.is_open_read = true and
+    container and
+    (fd.name startswith /host/proc/ or
+    fd.name startswith /host/sys/) and
+    not k8s.ns.name = longhorn-system
+  output: >
+    Host filesystem accessed from container
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    file=%fd.name container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, host_access, discovery, det-011]

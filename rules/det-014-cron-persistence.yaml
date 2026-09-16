@@ -1,0 +1,16 @@
+- rule: Cron Persistence File Created in Container
+  desc: Detect creation or modification of cron persistence files inside a container
+  condition: >
+    evt.type in (open, openat, openat2) and
+    evt.is_open_write = true and
+    container and
+    (fd.name startswith /etc/cron.d/ or
+     fd.name = /etc/crontab)
+  output: >
+    Cron persistence file modified
+    (user=%user.name process=%proc.name command=%proc.cmdline
+    file=%fd.name container_id=%container.id container_name=%container.name
+    image=%container.image.repository:%container.image.tag
+    k8s_ns=%k8s.ns.name k8s_pod=%k8s.pod.name)
+  priority: WARNING
+  tags: [container, persistence, cron, det-014]

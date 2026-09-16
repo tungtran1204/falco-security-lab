@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: det-010-test
+spec:
+  restartPolicy: Never
+  containers:
+    - name: det-010-test
+      image: ubuntu:22.04
+      command: ["sleep", "3600"]
+      volumeMounts:
+        - name: containerd-socket
+          mountPath: /run/containerd/containerd.sock
+  volumes:
+    - name: containerd-socket
+      hostPath:
+        path: /run/containerd/containerd.sock
+        type: Socket

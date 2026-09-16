@@ -1,0 +1,1 @@
+11:17:48.249189000: Error K8s Secret Get Successfully (user=kubernetes-admin secret=det-013-test ns=default resource=secrets resp=200 decision=allow reason=RBAC: allowed by ClusterRoleBinding "kubeadm:cluster-admins" of ClusterRole "cluster-admin" to Group "kubeadm:cluster-admins")
