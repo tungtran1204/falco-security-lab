@@ -1,0 +1,10 @@
+===== P4-03 POST-RECOVERY DETECTION =====
+TEST_START=2026-09-17T11:11:45+07:00
+FALCO_POD=falco-psvqh
+
+===== TEST WORKLOAD =====
+trigger=2026-09-17T04:11:46+00:00
+apt 2.8.3 (amd64)
+
+===== FALCO DETECTION =====
+{"hostname":"node02","output":"04:11:46.700866130: Warning Package manager executed in container (user=root command=apt --version container_id=3808c1bcd550 container_name=test image=docker.io/library/ubuntu:24.04 k8s_ns=default k8s_pod=p4-recovery-detection-test) container_id=3808c1bcd550 container_name=test container_image_repository=docker.io/library/ubuntu container_image_tag=24.04 k8s_pod_name=p4-recovery-detection-test k8s_ns_name=default","output_fields":{"container.id":"3808c1bcd550","container.image.repository":"docker.io/library/ubuntu","container.image.tag":"24.04","container.name":"test","evt.time":1789618306700866130,"k8s.ns.name":"default","k8s.pod.name":"p4-recovery-detection-test","proc.cmdline":"apt --version","user.name":"root"},"priority":"Warning","rule":"Package Manager Executed in Container","source":"syscall","tags":["container","det-004","package_management"],"time":"2026-09-17T04:11:46.700866130Z"}

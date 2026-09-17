@@ -1,0 +1,17 @@
+===== P4-03 PRE-RECOVERY =====
+2026-09-17T11:03:22+07:00
+
+===== TARGET =====
+NAME          READY   STATUS    RESTARTS   AGE   IP             NODE     NOMINATED NODE   READINESS GATES
+falco-t8p52   2/2     Running   0          18h   10.244.1.171   node02   <none>           <none>
+
+===== DAEMONSET =====
+NAME    DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+falco   2         2         2       2            2           <none>          2d2h
+
+===== POD UID =====
+12dde626-8c36-486c-b779-00d8e6b2df39
+
+===== RESTART COUNT =====
+falco=0
+falcoctl-artifact-follow=0

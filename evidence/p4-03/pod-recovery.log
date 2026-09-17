@@ -1,0 +1,36 @@
+===== P4-03 POD RECOVERY TEST =====
+START=2026-09-17T11:04:19+07:00
+OLD_POD=falco-t8p52
+OLD_UID=12dde626-8c36-486c-b779-00d8e6b2df39
+
+===== DELETE POD =====
+pod "falco-t8p52" deleted from falco namespace
+
+===== WAIT OLD POD DELETED =====
+pod/falco-t8p52 condition met
+
+===== WAIT REPLACEMENT =====
+NEW_POD=falco-psvqh
+
+===== WAIT READY =====
+pod/falco-psvqh condition met
+
+===== RECOVERY RESULT =====
+OLD_POD=falco-t8p52
+NEW_POD=falco-psvqh
+OLD_UID=12dde626-8c36-486c-b779-00d8e6b2df39
+NEW_UID=40efb2e6-512e-47c1-8f8f-462020429249
+recovery_time_seconds=56.752
+
+NAME          READY   STATUS    RESTARTS   AGE   IP             NODE     NOMINATED NODE   READINESS GATES
+falco-psvqh   2/2     Running   0          51s   10.244.1.230   node02   <none>           <none>
+
+===== DAEMONSET AFTER =====
+NAME    DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+falco   2         2         2       2            2           <none>          2d2h
+
+===== RESTART COUNT =====
+falco=0
+falcoctl-artifact-follow=0
+
+END=2026-09-17T11:05:16+07:00
