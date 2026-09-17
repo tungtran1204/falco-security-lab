@@ -1,0 +1,78 @@
+falcosecurity_falco_version_info{version="0.44.1"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-018-reverse-shell.yaml",sha256="482ad4efedc614745337efdda5197ed706f543c66b4b2fb7bc24772632128195"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-017-outbound-connection.yaml",sha256="8212b54d13af515ceeba1ca0f76fb24ebbbe24e1ca2a54debf55cdf920939f5c"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-016-discovery-tools.yaml",sha256="1369f45e00d2dc6c8e9a1645abb94e821ba12911c6962e3c744b347a2a49b0fb"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-015-executable-modification.yaml",sha256="ab89398db2019974bd11d2147cb97b43ba420823e1d95a5bddcbc806032cd01e"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-014-cron-persistence.yaml",sha256="0aeb948d2fc0fea780c74cb4c53abdc531d1caade6e7872d0a971da2e4bbab49"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-012-kubectl-in-container.yaml",sha256="4c10b8039a03c030fb1c02af37ed68fe1acf6e3a6246c41dc206cb5623d4400f"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-008-privilege-change.yaml",sha256="f5b7aea34fa52229922aaea4e1d184f8afad8d53b475680621458741cb28285e"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-011-host-filesystem.yaml",sha256="8aa30dfbbb5a3199fdfcef890ee2693647052b05c2fc6bdf018fee6624c8cb21"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="falco_rules.yaml",sha256="30a1a60263ab97650c851011468da03b17fc0096a7cfa3b6686eba5de73b865b"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-010-runtime-socket.yaml",sha256="5b3bf4a5c6ee4723944316de04efd7a5fddd8d2395b34f0e5c71d9f9a11e44a3"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-007-mounted-secret.yaml",sha256="e801a37a5bcc923e689e17d2fd23a54db829d3a7b1c4b8d431675dc62cdd74c2"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-009-suspicious-namespace.yaml",sha256="8d55905ef6b1b69a70a02096b3df5f9bb389b3c77252dac5c8175e66175d376f"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-006-service-account-token.yaml",sha256="83459777c4e70a111a69e945e29cf6c7e8e46543dc80ea294cd03f48e6fe57d1"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-005-script-interpreter.yaml",sha256="62dc1932bba800acc0efc73f0e280b3cc8fae10732d61774f0bd4b47ec77d7e8"} 1
+falcosecurity_falco_sha256_rules_files_info{file_name="det-004-package-manager.yaml",sha256="4c5e37d3eabe68803fb7cb77803ff3e10482978120b91dfa4ae9abfe9123e025"} 1
+falcosecurity_falco_sha256_config_files_info{file_name="falco.yaml",sha256="7fab3ca6e2b819131b501866702c05a6434355aeb9ccfcd69052fedae94e2ff7"} 1
+falcosecurity_falco_rules_matches_total{priority="5",rule_name="Contact K8S API Server From Container",source="syscall",tag_T1565="true",tag_container="true",tag_k8s="true",tag_maturity_stable="true",tag_mitre_discovery="true",tag_network="true"} 2
+falcosecurity_falco_rules_matches_total{priority="4",rule_name="Kubernetes Service Account Token Read",source="syscall",tag_container="true",tag_credential_access="true",tag_det_006="true",tag_kubernetes="true"} 300
+falcosecurity_falco_rules_matches_total{priority="4",rule_name="Setuid or Setgid Executed in Container",source="syscall",tag_container="true",tag_det_008="true",tag_privilege_escalation="true"} 42
+falcosecurity_falco_rules_matches_total{priority="4",rule_name="Suspicious Namespace Operation in Container",source="syscall",tag_container="true",tag_det_009="true",tag_namespace="true",tag_privilege_escalation="true"} 1966
+falcosecurity_falco_rules_matches_total{priority="4",rule_name="Host Proc or Sys Access from Container",source="syscall",tag_container="true",tag_det_011="true",tag_discovery="true",tag_host_access="true"} 8
+falcosecurity_falco_rules_matches_total{priority="5",rule_name="Discovery Tool Executed in Container",source="syscall",tag_container="true",tag_det_016="true",tag_discovery="true"} 500
+falcosecurity_falco_rules_matches_total{priority="5",rule_name="Outbound Connection from Container",source="syscall",tag_container="true",tag_det_017="true",tag_network="true",tag_outbound="true"} 1713
+falcosecurity_scap_engine_name_info{engine_name="modern_bpf",evt_source="syscall"} 1
+falcosecurity_scap_n_evts_total 8026854
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="clone_fork"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="execve"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="connect"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="open"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="dir_file"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="other_interest"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="close"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="exit",drop="proc"} 0
+falcosecurity_scap_n_drops_scratch_map_total 0
+falcosecurity_scap_n_drops_total 0
+falcosecurity_falco_cpu_usage_ratio 0.044000
+falcosecurity_falco_memory_rss_bytes 145399808.000000
+falcosecurity_falco_memory_vsz_bytes 1676099584.000000
+falcosecurity_falco_memory_pss_bytes 106065920.000000
+falcosecurity_falco_container_memory_used_bytes 0.000000
+falcosecurity_falco_host_cpu_usage_ratio 0.044000
+falcosecurity_falco_host_memory_used_bytes 6689705984.000000
+falcosecurity_falco_host_procs_running_total 2
+falcosecurity_falco_host_open_fds_total 2880
+falcosecurity_scap_n_threads_total 913
+falcosecurity_scap_n_fds_total 18053
+falcosecurity_scap_n_noncached_fd_lookups_total 3464738
+falcosecurity_scap_n_cached_fd_lookups_total 2898298
+falcosecurity_scap_n_failed_fd_lookups_total 65991
+falcosecurity_scap_n_added_fds_total 1798354
+falcosecurity_scap_n_removed_fds_total 1452334
+falcosecurity_scap_n_stored_evts_total 1456519
+falcosecurity_scap_n_store_evts_drops_total 0
+falcosecurity_scap_n_retrieved_evts_total 1443023
+falcosecurity_scap_n_retrieve_evts_drops_total 0
+falcosecurity_scap_n_noncached_thread_lookups_total 927379
+falcosecurity_scap_n_cached_thread_lookups_total 15403196
+falcosecurity_scap_n_failed_thread_lookups_total 14709
+falcosecurity_scap_n_added_threads_total 52278
+falcosecurity_scap_n_removed_threads_total 51358
+falcosecurity_scap_n_drops_full_threadtable_total 0
+falcosecurity_plugins_container_n_containers_total 49
+falcosecurity_plugins_container_n_missing_container_images_total 0
+falcosecurity_scap_n_drops_buffer_total{dir="enter",drop="clone_fork"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="enter",drop="execve"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="enter",drop="connect"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="enter",drop="open"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="enter",drop="dir_file"} 0
+falcosecurity_scap_n_drops_buffer_total{dir="enter",drop="other_interest"} 0
+falcosecurity_falco_kernel_release_info{kernel_release="6.8.0-79-generic"} 1
+falcosecurity_evt_hostname_info{hostname="node02"} 1
+falcosecurity_falco_outputs_queue_num_drops_total 0
+falcosecurity_falco_reload_timestamp_nanoseconds 1789550267992743000
+falcosecurity_falco_start_timestamp_nanoseconds 1789550268001844069
+falcosecurity_falco_duration_seconds_total 1929
+falcosecurity_falco_host_boot_timestamp_nanoseconds 1783126894000000000
+falcosecurity_falco_host_num_cpus_total 8

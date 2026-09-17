@@ -1,0 +1,42 @@
+===== P4-02 LOAD TEST =====
+FALCO_POD=falco-t8p52
+START=2026-09-16T17:02:55+07:00
+
+===== BEFORE =====
+events=11290491
+capture_drops=0
+store_drops=0
+retrieve_drops=0
+output_drops=0
+
+===== CREATE LOAD POD =====
+pod/p4-syscall-load created
+pod/p4-syscall-load condition met
+
+===== WORKLOAD RESULT =====
+iterations=27000
+
+===== AFTER =====
+events=12466333
+capture_drops=0
+store_drops=0
+retrieve_drops=0
+output_drops=0
+
+===== DELTA =====
+event_delta=1175842
+capture_drop_delta=0
+store_drop_delta=0
+retrieve_drop_delta=0
+output_drop_delta=0
+observed_event_rate=19597.37 events/sec
+capture_drop_ratio=0.000000%
+
+===== FALCO RESOURCE AFTER =====
+NAME          CPU(cores)   MEMORY(bytes)   
+falco-t8p52   230m         90Mi            
+
+===== FALCO HEALTH =====
+NAME          READY   STATUS    RESTARTS   AGE   IP             NODE     NOMINATED NODE   READINESS GATES
+falco-t8p52   2/2     Running   0          46m   10.244.1.171   node02   <none>           <none>
+END=2026-09-16T17:04:04+07:00

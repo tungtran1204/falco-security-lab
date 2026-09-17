@@ -1,0 +1,27 @@
+===== P4-02 PRE-TEST =====
+2026-09-16T15:56:19+07:00
+
+===== FALCO PODS =====
+NAME                              READY   STATUS    RESTARTS   AGE     IP             NODE     NOMINATED NODE   READINESS GATES
+falco-ft7dh                       2/2     Running   0          5h25m   10.244.1.145   node02   <none>           <none>
+falco-k8saudit-5547bb4579-g4w8h   1/1     Running   0          22h     10.244.1.73    node02   <none>           <none>
+falco-vchmv                       2/2     Running   0          5h26m   10.244.0.12    node01   <none>           <none>
+
+===== RESOURCE =====
+NAME                                    CPU(cores)   MEMORY(bytes)   
+falco-falcosidekick-55cc7c5997-4lbnf    5m           43Mi            
+falco-falcosidekick-55cc7c5997-qztfq    35m          212Mi           
+falco-falcosidekick-ui-848fb7b9-mz6n4   7m           10Mi            
+falco-falcosidekick-ui-848fb7b9-pvhzx   10m          12Mi            
+falco-falcosidekick-ui-redis-0          478m         2613Mi          
+falco-ft7dh                             42m          87Mi            
+falco-k8saudit-5547bb4579-g4w8h         75m          21Mi            
+falco-vchmv                             52m          80Mi            
+
+===== FALCO STATS / DROPS =====
+
+----- falco-ft7dh -----
+
+----- falco-k8saudit-5547bb4579-g4w8h -----
+
+----- falco-vchmv -----

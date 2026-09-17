@@ -1,0 +1,21 @@
+P4-02 DETECTION LATENCY
+========================
+triggers=10
+detections=10
+
+sample=01 trigger_ns=1789554555480797865 event_ns=1789554555483193575 latency_ms=2.396
+sample=02 trigger_ns=1789554557498922270 event_ns=1789554557500269350 latency_ms=1.347
+sample=03 trigger_ns=1789554559510032425 event_ns=1789554559511972077 latency_ms=1.940
+sample=04 trigger_ns=1789554561521532867 event_ns=1789554561522846699 latency_ms=1.314
+sample=05 trigger_ns=1789554563537694378 event_ns=1789554563540023412 latency_ms=2.329
+sample=06 trigger_ns=1789554565555951311 event_ns=1789554565557255483 latency_ms=1.304
+sample=07 trigger_ns=1789554567567601312 event_ns=1789554567570215367 latency_ms=2.614
+sample=08 trigger_ns=1789554569588881271 event_ns=1789554569590350367 latency_ms=1.469
+sample=09 trigger_ns=1789554571606424029 event_ns=1789554571607570108 latency_ms=1.146
+sample=10 trigger_ns=1789554573616943276 event_ns=1789554573618502147 latency_ms=1.559
+
+latency_min_ms=1.146
+latency_avg_ms=1.742
+latency_max_ms=2.614
+latency_median_ms=1.514
+detection_result=10/10
